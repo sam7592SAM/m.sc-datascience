@@ -63,8 +63,7 @@ plt.legend()
 
 # 2. Calling Pie Graph using pie_gr
 
-pie_gr(mlsusp, ["2010", "2011", "2012", "2013", "2014",
-       "2015", "2016", "2017", "2018", "2019", "2020"])
+pie_gr(mlsusp, ["2015", "2016", "2017", "2018", "2019", "2020"])
 
 plt.title("Malaria Spread in India")
 plt.savefig("piegr.png")
