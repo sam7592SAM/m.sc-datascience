@@ -23,7 +23,7 @@ print(mlsusb)
 
 # Defining Functions
 
-# 1. Line Graph
+# 1. Line Plot
 
 
 def line_gr(lin1, con, lbl):
@@ -34,7 +34,7 @@ def line_gr(lin1, con, lbl):
     to plot on the graph.'''
     return plt.plot(lin1["Year"], lin1[con], label=lbl)
 
-# 2. Pie Graph
+# 2. Pie Chart
 
 
 def pie_gr(p1):
@@ -60,7 +60,7 @@ def bar_gr(b1, contr, cas):
 
 
 # Calling functions
-# 1. Inserting values into the Line Graph using line_gr
+# 1. Inserting values into the Line Plot using line_gr
 
 line_gr(mlsus, "India", "India")
 line_gr(mlsus, "Democratic Republic of the Congo", "D_Rep_Congo")
@@ -70,7 +70,7 @@ line_gr(mlsus, "Ghana", "Ghana")
 
 # Labelling X and Y plots
 plt.xlabel("Year")
-plt.ylabel("No of Cases")
+plt.ylabel("No of Cases (in hundred millions)")
 plt.title("Suspected Malaria Cases")
 plt.savefig("linegr.png")
 plt.legend()
@@ -90,7 +90,7 @@ bar_gr(mlsusb, "Countries", "Suspected Cases")
 
 plt.title("Malaria Cases in 2020")
 plt.xlabel("Countries")
-plt.ylabel("No. of Cases")
+plt.ylabel("No. of Cases (in hundred millions)")
 plt.legend(loc='best')
 plt.savefig("bargr.png")
 plt.show()
