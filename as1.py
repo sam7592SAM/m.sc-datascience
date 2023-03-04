@@ -8,16 +8,21 @@ Created on Thu Mar  2 10:59:00 2023
 # -*- coding: utf-8 -*-
 
 
-# Reading CSV files for plotting Line, Pie and Bar Graph
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
+# Reading CSV files.
+
+# 1. CSV file of Pie Chart
 mlsusp = pd.read_csv("malariapie.csv", index_col=0)
 print(mlsusp)
 
+# 2. CSV file of Line Plot
 mlsus = pd.read_csv("malaria.csv")
 print(mlsus)
 
+# 3. CSV file of Bar Graph
 mlsusb = pd.read_csv("malariabar.csv")
 print(mlsusb)
 
@@ -59,8 +64,9 @@ def bar_gr(b1, contr, cas):
     return
 
 
-# Calling functions
-# 1. Inserting values into the Line Plot using line_gr
+# Calling Functions
+
+# 1. Inserting values into the Line Plot from the dataframe mlsus using line_gr
 
 line_gr(mlsus, "India", "India")
 line_gr(mlsus, "Democratic Republic of the Congo", "D_Rep_Congo")
@@ -69,28 +75,35 @@ line_gr(mlsus, "Uganda", "Uganda")
 line_gr(mlsus, "Ghana", "Ghana")
 
 # Labelling X and Y plots
+
 plt.xlabel("Year")
 plt.ylabel("No of Cases (in hundred millions)")
-plt.title("Suspected Malaria Cases")
-plt.savefig("linegr.png")
-plt.legend()
 
-# 2. Retrieveing the values from the dataframe into the Pie Graph using pie_gr
+plt.title("Suspected Malaria Cases")  # Title to the Line Plot
+plt.savefig("linegr.png")  # saving the plot in PNG format
+plt.legend()
+plt.show()
+
+# 2. Retrieveing the values from the dataframe mlsusp into the Pie Chart
+# using pie_gr
 
 pie_gr(mlsusp)
 
-plt.title("Malaria Spread in India")
-plt.savefig("piegrin.png")
+plt.title("Malaria Spread in India")  # Title to the Pie Chart
+plt.savefig("piegrin.png")  # saving the plot in PNG format
 plt.show()
 
 
-# 3. Inserting values into the Bar Graph using bar_gr
+# 3. Inserting values into the Bar Graph from the dataframe mlsusb using bar_gr
 
 bar_gr(mlsusb, "Countries", "Suspected Cases")
 
-plt.title("Malaria Cases in 2020")
+plt.title("Malaria Cases in 2020")  # Title to the Bar Graph
+
+# Labelling X and Y plots
+
 plt.xlabel("Countries")
 plt.ylabel("No. of Cases (in hundred millions)")
 plt.legend(loc='best')
-plt.savefig("bargr.png")
+plt.savefig("bargr.png")  # saving the plot in PNG format
 plt.show()
